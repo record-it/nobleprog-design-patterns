@@ -1,10 +1,13 @@
 package facade;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
-@Builder
 public class Paragraph extends ReportItem{
-    private String content;
+    @Builder
+    Paragraph(String content) {
+        super(content);
+    }
 }
