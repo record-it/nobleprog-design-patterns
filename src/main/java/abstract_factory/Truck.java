@@ -1,11 +1,9 @@
 package abstract_factory;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
+@ToString(callSuper = true)
 public class Truck extends Vehicle{
     private int maxLoad;
 

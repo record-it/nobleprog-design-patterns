@@ -6,12 +6,9 @@ import lombok.ToString;
 
 @Data
 @ToString(callSuper = true)
-public class Bus extends Vehicle{
-    private int seats;
-
+public class Van extends Vehicle{
     @Builder
-    public Bus(int weight, String name, int power, int seats) {
+    public Van(int weight, String name, int power) {
         super(weight, name, power);
-        this.seats = seats;
     }
 }
