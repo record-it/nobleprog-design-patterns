@@ -51,7 +51,7 @@ public class Book {
         private String author;
         private int publishingYear;
 
-        public Builder() {
+        private Builder() {
         }
 
         public Builder publishingYear(int publishingYear){
