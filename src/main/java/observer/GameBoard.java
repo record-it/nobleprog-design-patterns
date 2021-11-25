@@ -17,7 +17,13 @@ public class GameBoard implements Subject {
     }
 
     private void notifyAllObservers(String event){
-        observers.forEach(o -> o.update(event));
+        observers.forEach(o -> {
+            try {
+                o.update(event);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     public void move(){
