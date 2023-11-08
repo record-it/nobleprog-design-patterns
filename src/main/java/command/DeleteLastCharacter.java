@@ -1,9 +1,9 @@
 package command;
 
-public class DeleteCharacter implements Command{
+public class DeleteLastCharacter implements Command{
     private final TextEditor editor;
     private char deletedCharacter;
-    public DeleteCharacter(TextEditor editor) {
+    public DeleteLastCharacter(TextEditor editor) {
         this.editor = editor;
     }
 

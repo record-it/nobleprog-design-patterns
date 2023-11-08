@@ -2,9 +2,9 @@ package bridge;
 
 public class SuperRemoteController implements RemoteController{
 
-    private final ControlledDevice device;
+    private ControlledDevice device;
 
-    public SuperRemoteController(ControlledDevice device) {
+    public void setDevice(ControlledDevice device) {
         this.device = device;
     }
 
@@ -16,6 +16,32 @@ public class SuperRemoteController implements RemoteController{
 
     @Override
     public void powerOff() {
-
+        device.powerOff();
     }
+
+    @Override
+    public void changeChannel(int channel) {
+        device.changeChannel(channel);
+    }
+
+    @Override
+    public void setVolume(int volume) {
+        int v = device.getVolume();
+        if (v > volume){
+            do{
+                device.volumeDown();
+                v--;
+                System.out.println("Volume down");
+            } while(v == device.getVolume() && device.getVolume() > volume);
+        }
+        if (v < volume){
+            do{
+                device.volumeUp();
+                System.out.println("Volume up");
+                v++;
+            } while(v == device.getVolume() && device.getVolume() < volume);
+        }
+    }
+
+
 }
