@@ -1,7 +1,9 @@
 package state;
 
 public class Fan {
-    int speed;
+    private int speed;
+
+    private boolean isPower;
     FanState currentState = new OffFanState(this);
 
     public void setCurrentState(FanState state){
@@ -15,5 +17,17 @@ public class Fan {
     @Override
     public String toString() {
         return "speed=" + speed;
+    }
+
+    void powerOn(){
+        isPower = true;
+    }
+
+    void powerOff(){
+        isPower = false;
+    }
+
+    void setSpeed(int speed){
+        this.speed = speed;
     }
 }

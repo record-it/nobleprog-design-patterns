@@ -6,7 +6,7 @@ public class MediumFanState implements FanState{
 
     public MediumFanState(Fan context) {
         this.context = context;
-        context.speed = SPEED;
+        context.setSpeed(SPEED);
     }
 
     @Override

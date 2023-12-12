@@ -6,7 +6,8 @@ public class LowFanState implements FanState{
 
     public LowFanState(Fan context) {
         this.context = context;
-        context.speed = SPEED;
+        context.powerOn();
+        context.setSpeed(SPEED);
     }
 
     @Override

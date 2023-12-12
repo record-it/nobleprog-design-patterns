@@ -8,7 +8,6 @@ public class CharRoom implements Mediator<Request>{
 
     @Override
     public void handle(Request request) {
-        clients.
     }
 
     public void registerClient(Client<Response> client){

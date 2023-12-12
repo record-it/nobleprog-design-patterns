@@ -6,7 +6,8 @@ public class OffFanState implements FanState {
 
     public OffFanState(Fan context) {
         this.context = context;
-        context.speed = SPEED;
+        context.setSpeed(SPEED);
+        context.powerOff();
     }
 
     @Override

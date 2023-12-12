@@ -11,8 +11,6 @@ public class InterpreterDemo {
         for(var line: lines){
             String[] tokens = line.trim().split("\\s");
             Expression e = null;
-            Expression left = null;
-            Expression right = null;
             switch (tokens[0]){
                 case "set_pen":
                     e = new SetPenExpression(tokens[1].charAt(0));
@@ -20,7 +18,7 @@ public class InterpreterDemo {
                 case "set_at":
                     String[] arr = line.replace("set_at", "").trim().split(",");
                     if (arr.length != 2){
-                        throw new IllegalArgumentException("Błąd składniowy, niepoprawna liczba argumentów poleceia set_at");
+                        throw new IllegalArgumentException("Błąd składniowy, niepoprawna liczba argumentów polecenia set_at");
                     }
                     e = new SetAtExpression(parseOperatorExpression(arr[0].trim()), parseOperatorExpression(arr[1].trim()));
                     break;
